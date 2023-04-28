@@ -1,3 +1,25 @@
+// boutons
+let boutonUn = document.getElementById("boutonUn")
+let boutonDeux = document.getElementById("boutonDeux")
+let boutonTrois = document.getElementById("boutonTrois")
+let boutonQuatre = document.getElementById("boutonQuatre")
+let boutonCinq = document.getElementById("boutonCinq")
+let boutonSix = document.getElementById("boutonSix")
+let boutonSept = document.getElementById("boutonSept")
+let boutonHuit = document.getElementById("boutonHuit")
+let boutonNeuf = document.getElementById("boutonNeuf")
+let boutonZero = document.getElementById("boutonZero")
+let boutonPlus = document.getElementById("boutonPlus")
+let boutonMoins = document.getElementById("boutonMoins")
+let boutonFois = document.getElementById("boutonFois")
+let boutonDivise = document.getElementById("boutonDivise")
+let boutonEgal = document.getElementById("boutonEgal")
+let boutonAC = document.getElementById("boutonAc")
+
+
+
+
+
 // les 3 variables d'une opération : A , SIGNE D"OPÉRATION ET B 
 let a = ""
 let b = ""
@@ -25,16 +47,20 @@ function divide(a, b) {
 }
 
 function operate(operator, a, b) {
-    if (operator = "+") {
+    if (operator === "+") {
         return add(a, b)
-    }
-    if (operator = "-") {
+
+    } else if (operator === "-") {
         return substract(a, b)
-    }
-    if (operator = "*") {
+
+    } else if (operator === "*") {
         return multiply(a, b)
-    }
-    if (operator = "/") {
+
+    } else if (operator === "/") {
         return divide(a, b)
+
     }
 }
+
+
+
