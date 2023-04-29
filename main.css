@@ -4,7 +4,7 @@ body {
     justify-content: center;
     display: flex;
     flex-shrink: 1;
-
+    background-image: url(chuck.png)
 }
 
 .calculator {
