@@ -94,7 +94,7 @@ boutons.forEach(bouton => {
                 if ((operator === "+" || operator === "-") && (b === 0 + "" || b === 0)) {
                     b = 0
 
-                } else if ((operator === "*" || operator === "/") && (b === 0 + "" || b === 0)) {
+                } else if ((operator === "*" || operator === "/") && (b == 0 + "" || b == 0)) {
                     b = 1
                 }
                 output.textContent = operate(operator, a, b)
@@ -112,12 +112,16 @@ boutons.forEach(bouton => {
 
         if (bouton.id === "boutonEgal") {
             if (operator === undefined) {
-                operator = "+"
+                output.textContent = operate("+", a, b)
+                input.textContent = operate("+", a, b)
+                a = operate("+", a, b) + ""
+                b = 0 + ""
                 boutonDecimal.classList.remove("CAONIMA")
+
             } else {
                 output.textContent = operate(operator, a, b)
                 input.textContent = operate(operator, a, b)
-                console.log(operate(operator, a, b))
+
                 a = operate(operator, a, b) + ""
                 operator = undefined
                 b = 0 + ""
@@ -140,15 +144,23 @@ boutons.forEach(bouton => {
 
                 input.textContent = (input.textContent).slice(0, -1)
             } else {
-                b = b.slice(0, -1)
-                input.textContent = (input.textContent).slice(0, -1)
-                console.log("a = " + a)
-                console.log("b = " + b)
-                console.log("operator = " + operator)
+                if (b.length >= 1) {
+                    b = b.slice(0, -1)
+                    input.textContent = (input.textContent).slice(0, -1)
+                    console.log("a = " + a)
+                    console.log("b = " + b)
+                    console.log("operator = " + operator)
+                } else {
+                    a = a.slice(0, -1)
+                    input.textContent = (input.textContent).slice(0, -1)
+                }
             }
             if (!(input.textContent.includes("."))) {
                 boutonDecimal.classList.remove("CAONIMA")
 
+            }
+            if ((operator === "*" || operator === "/") && (b == 0 + "" || b == 0)) {
+                b = "1"
             }
         }
     })
