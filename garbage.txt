@@ -1,0 +1,6 @@
+première étape: créer les fonctions de calculs basiques ( + - * /)
+
+10 + 4 + 2 = 16 
+
+
+operator si bouton est "égal"
